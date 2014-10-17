@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141017081914) do
+ActiveRecord::Schema.define(version: 20141017082959) do
 
   create_table "alunos", force: true do |t|
-    t.string   "matricula",  limit: 15
+    t.string   "matricula",  limit: 9
     t.string   "nome",       limit: 30
     t.string   "curriculo",  limit: 36
     t.string   "email",      limit: 30
-    t.string   "senha",      limit: 12
+    t.string   "senha",      limit: 32
     t.datetime "created_at"
     t.datetime "updated_at"
   end
