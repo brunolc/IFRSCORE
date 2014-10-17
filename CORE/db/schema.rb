@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140918221707) do
+ActiveRecord::Schema.define(version: 20141017081914) do
 
   create_table "alunos", force: true do |t|
     t.string   "matricula",  limit: 15
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20140918221707) do
     t.string   "endereco",   limit: 50
     t.string   "cidade",     limit: 50
     t.text     "descricao"
+    t.string   "senha",      limit: 32
     t.datetime "created_at"
     t.datetime "updated_at"
   end

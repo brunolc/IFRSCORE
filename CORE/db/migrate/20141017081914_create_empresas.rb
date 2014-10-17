@@ -6,6 +6,7 @@ class CreateEmpresas < ActiveRecord::Migration
       t.string :endereco, limit: 50
       t.string :cidade, limit: 50
       t.text :descricao
+      t.string :senha, limit: 32
 
       t.timestamps
     end

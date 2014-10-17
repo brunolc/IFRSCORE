@@ -6,6 +6,7 @@ one:
   endereco: MyString
   cidade: MyString
   descricao: MyText
+  senha: MyString
 
 two:
   nome: MyString
@@ -13,3 +14,4 @@ two:
   endereco: MyString
   cidade: MyString
   descricao: MyText
+  senha: MyString

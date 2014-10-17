@@ -10,4 +10,6 @@ validates :endereco,presence: true
 validates :cnpj,uniqueness: true
 
 validates :nome,uniqueness: true
+
+
 end
