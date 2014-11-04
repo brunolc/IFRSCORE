@@ -1,0 +1,21 @@
+
+  <br><br>
+    <br><br>
+      <br><br>
+<h2>empresas</h2>
+
+
+
+<% @empresas.each do |e| %>
+
+    <%= link_to e.nome, empresa_path(e) %>
+
+    <%= link_to "Excluir", e, method: :delete %>
+
+    <%= link_to "Editar", edit_empresa_path(e) %>
+
+    <br><br>
+
+<% end %>
+
+<%= link_to "cadastre-se", new_empresa_path %>
