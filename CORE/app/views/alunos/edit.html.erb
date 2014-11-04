@@ -1,0 +1,38 @@
+  <br><br>
+    <br><br>
+      <br><br>
+<h2>Editar aluno</h2>
+
+
+
+
+<%= form_for @aluno do |a| %>
+
+    <%= a.label 'Matricula' %>
+
+    <%= a.text_field :matricula, maxlength: 9 %>
+      <br>
+
+
+    <%= a.label 'Nome' %>
+
+    <%= a.text_field :nome, maxlength: 30 %>
+      <br>
+   
+    
+    <%= a.label 'Email' %>
+
+    <%= a.email_field  :email %>
+
+    <br>
+
+
+     <%= a.label 'Senha' %>
+
+    <%= a.password_field :senha %>
+     <br>
+
+
+    <%= a.submit 'Salvar' %>
+
+<% end %>
