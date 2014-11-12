@@ -1,5 +1,9 @@
 CORE::Application.routes.draw do
 
+  get 'login' => 'login_aluno#index', as: :login_form
+  post 'login_aluno/login', as: :login
+  get 'logout'=> 'login_aluno#logout', as: :logout
+
   resources :alunos
 
   resources :empresas

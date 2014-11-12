@@ -2,6 +2,18 @@
   <br><br>
     <br><br>
       <br><br>
+
+<% flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, class: name %>
+<% end %>
+
+<% if session[:usuario] %>
+
+    Logado como <%= session[:usuario] %>
+    <br>
+<a class="btn btn-danger" href="/logout">logout</a>
+<% end %>
+      
 <h2>Alunos</h2>
 
 

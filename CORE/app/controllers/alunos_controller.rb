@@ -1,3 +1,4 @@
+require 'digest'
 class AlunosController < ApplicationController
     def index
         @alunos = Aluno.all
@@ -12,6 +13,7 @@ class AlunosController < ApplicationController
 
     def create
         @aluno = Aluno.new(params.require(:aluno).permit(:matricula,:nome,:email,:senha))
+         @aluno.senha = Digest::MD5.hexdigest(@aluno.senha)  
         if @aluno.save
             redirect_to :alunos, notice: "Aluno #{@aluno.nome} salvo"
         else
