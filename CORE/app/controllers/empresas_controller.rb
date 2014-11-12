@@ -1,9 +1,10 @@
+require 'digest'
 class EmpresasController < ApplicationController
 
 	def index
         @empresas = Empresa.all
     end
-  def new
+    def new
         @empresa = Empresa.new
     end
 
@@ -13,6 +14,7 @@ class EmpresasController < ApplicationController
 
     def create
         @empresa = Empresa.new(params.require(:empresa).permit(:nome,:cnpj,:endereco,:cidade,:descricao,:senha))
+        @empresa.senha=Digest::MD5.hexdigest(@empresa.senha)
         if @empresa.save
             redirect_to :empresas, notice: "Empresa #{@empresa.nome} salvo"
         else

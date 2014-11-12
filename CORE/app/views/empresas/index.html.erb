@@ -3,7 +3,16 @@
     <br><br>
       <br><br>
 <h2>empresas</h2>
+<% flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, class: name %>
+<% end %>
 
+<% if session[:empresa] %>
+
+    Empresa <%= session[:empresa] %> logada
+     <br>
+<a class="btn btn-danger" href="/logout">logout</a>
+<% end %>
 
 
 <% @empresas.each do |e| %>

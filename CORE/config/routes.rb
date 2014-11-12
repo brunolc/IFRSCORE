@@ -1,5 +1,9 @@
 CORE::Application.routes.draw do
 
+  get "login_empresa"=> 'login_empresa#index', as: :loginempresa_form
+  post 'login_empresa/login2',as: :login2
+
+  
   get 'login' => 'login_aluno#index', as: :login_form
   post 'login_aluno/login', as: :login
   get 'logout'=> 'login_aluno#logout', as: :logout
@@ -57,11 +61,13 @@ CORE::Application.routes.draw do
   #   end
   #   resources :posts, concerns: :toggleable
   #   resources :photos, concerns: :toggleable
-
-  # Example resource route within a namespace:
-  #   namespace :admin do
   #     # Directs /admin/products/* to Admin::ProductsController
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+
+  # Example resource route within a namespace:
+  #   namespace :admin do
 end
+

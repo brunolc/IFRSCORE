@@ -1,0 +1,12 @@
+<br><br><br>
+
+<%= form_tag({action: 'login2'}, class: 'form-signin', method: 'post') do %>
+
+    <h2 class="form-signin-heading">Login do Usuario</h2>
+    <input type="text" name="cnpj"
+        class="form-control" placeholder="Seu cnpj" required autofocus>
+    <input type="password"  name="senha"
+        class="form-control" placeholder="Sua senha" required>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+
+<% end %>
