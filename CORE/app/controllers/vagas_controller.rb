@@ -12,7 +12,7 @@ class VagasController < ApplicationController
 
     def create
         @vaga = Vaga.new(params.require(:vaga).permit(:descricao,:numero))
-        @vaga.empresa_id = session[:empresa_id]
+        @vaga.empresa=Empresa.find_by_id(session[:empresa_id])
         if @vaga.save
             redirect_to :vagas, notice: "Vaga salva"
         else
@@ -33,13 +33,12 @@ class VagasController < ApplicationController
     def destroy
         v = Vaga.find(params[:id])
         v.destroy
-        redirect_to :vagas, notice: "Vaga excluída"
+        redirect_to :vagas, notice: "Vaga excluida"
     end
 
     def show
         @vaga = Vaga.find(params[:id])
-        empid = session[:empresa_id]
-        @empresa = Empresa.find(session[:empresa_id])
+        @empresa = Empresa.find_by_id(@vaga.empresa)
     end
 
    
