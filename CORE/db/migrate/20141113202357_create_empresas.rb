@@ -5,7 +5,7 @@ class CreateEmpresas < ActiveRecord::Migration
       t.string :cnpj, limit: 40
       t.string :endereco, limit: 50
       t.string :cidade, limit: 50
-      t.text :descricao
+      t.text :area_atuacao
       t.string :senha, limit: 32
 
       t.timestamps

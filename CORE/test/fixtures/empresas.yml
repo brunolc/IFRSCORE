@@ -5,7 +5,7 @@ one:
   cnpj: MyString
   endereco: MyString
   cidade: MyString
-  descricao: MyText
+  area_atuacao: MyText
   senha: MyString
 
 two:
@@ -13,5 +13,5 @@ two:
   cnpj: MyString
   endereco: MyString
   cidade: MyString
-  descricao: MyText
+  area_atuacao: MyText
   senha: MyString

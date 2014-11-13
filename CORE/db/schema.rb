@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141017082959) do
+ActiveRecord::Schema.define(version: 20141113202357) do
 
   create_table "alunos", force: true do |t|
     t.string   "matricula",  limit: 9
@@ -23,13 +23,19 @@ ActiveRecord::Schema.define(version: 20141017082959) do
     t.datetime "updated_at"
   end
 
-  create_table "empresas", force: true do |t|
+  create_table "cursos", force: true do |t|
     t.string   "nome",       limit: 30
-    t.string   "cnpj",       limit: 40
-    t.string   "endereco",   limit: 50
-    t.string   "cidade",     limit: 50
-    t.text     "descricao"
-    t.string   "senha",      limit: 32
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "empresas", force: true do |t|
+    t.string   "nome",         limit: 30
+    t.string   "cnpj",         limit: 40
+    t.string   "endereco",     limit: 50
+    t.string   "cidade",       limit: 50
+    t.text     "area_atuacao"
+    t.string   "senha",        limit: 32
     t.datetime "created_at"
     t.datetime "updated_at"
   end
