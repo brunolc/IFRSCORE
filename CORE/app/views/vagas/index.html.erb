@@ -1,0 +1,22 @@
+
+  <br><br>
+    <br><br>
+      <br><br>
+<h2>Vagas</h2>
+<% flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, class: name %>
+<% end %>
+
+<% @vagas.each do |v| %>
+
+    <%= link_to v.descricao, vaga_path(v) %>
+
+    <%= link_to "Excluir", v, method: :delete %>
+
+    <%= link_to "Editar", edit_vaga_path(v) %>
+
+    <br><br>
+
+<% end %>
+
+<%= link_to "cadastrar nova vaga", new_vaga_path %>

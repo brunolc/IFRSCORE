@@ -10,8 +10,14 @@ class LoginEmpresaController < ApplicationController
         render 'index'
     else
         session[:empresa] = u.nome
+        session[:empresa_id] = u.id
         redirect_to '/empresas'
     end
+  end
+  
+    def logout2
+     reset_session
+     redirect_to '/empresas'
   end
 
 end

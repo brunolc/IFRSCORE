@@ -13,7 +13,7 @@ class EmpresasController < ApplicationController
     end
 
     def create
-        @empresa = Empresa.new(params.require(:empresa).permit(:nome,:cnpj,:endereco,:cidade,:descricao,:senha))
+        @empresa = Empresa.new(params.require(:empresa).permit(:nome,:cnpj,:endereco,:cidade,:area_atuacao,:senha))
         @empresa.senha=Digest::MD5.hexdigest(@empresa.senha)
         if @empresa.save
             redirect_to :empresas, notice: "Empresa #{@empresa.nome} salvo"
@@ -24,7 +24,7 @@ class EmpresasController < ApplicationController
 
     def update
         @empresa = Empresa.find(params[:id])
-        if @empresa.update(params.require(:empresa).permit(:nome,:cnpj,:endereco,:cidade,:descricao,:senha))
+        if @empresa.update(params.require(:empresa).permit(:nome,:cnpj,:endereco,:cidade,:area_atuacao,:senha))
             redirect_to :empresas, notice: "Empresa #{@empresa.nome} atualizado"
         else
             render :edit

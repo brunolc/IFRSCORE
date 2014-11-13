@@ -1,0 +1,25 @@
+  <br><br>
+    <br><br>
+      <br><br>
+<h2>Editar Vaga</h2>
+
+
+
+
+<%= form_for @vaga do |v| %>
+
+    <%= v.label 'Descricao' %>
+
+    <%= v.text_field :descricao %>
+      <br>
+
+
+    <%= v.label 'Vagas' %>
+
+    <%= v.number_field :vagas, min: 1%>
+      <br>
+   
+  
+    <%= v.submit 'Salvar' %>
+
+<% end %>

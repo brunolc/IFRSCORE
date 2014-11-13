@@ -10,6 +10,7 @@ class LoginAlunoController < ApplicationController
         render 'index'
      else
         session[:usuario] = u.nome
+        session[:usuario_id] = u.id
         redirect_to '/alunos'    
     end
   end  
