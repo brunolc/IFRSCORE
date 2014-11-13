@@ -6,6 +6,7 @@ class CreateAlunos < ActiveRecord::Migration
       t.string :curriculo, limit: 36
       t.string :email, limit: 30
       t.string :senha, limit: 32
+      t.references :curso, index: true
 
       t.timestamps
     end

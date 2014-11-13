@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141113203126) do
+ActiveRecord::Schema.define(version: 20141113203535) do
 
   create_table "alunos", force: true do |t|
     t.string   "matricula",  limit: 9
@@ -19,9 +19,12 @@ ActiveRecord::Schema.define(version: 20141113203126) do
     t.string   "curriculo",  limit: 36
     t.string   "email",      limit: 30
     t.string   "senha",      limit: 32
+    t.integer  "curso_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "alunos", ["curso_id"], name: "index_alunos_on_curso_id"
 
   create_table "cursos", force: true do |t|
     t.string   "nome",       limit: 30
