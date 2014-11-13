@@ -4,6 +4,7 @@ class CreateVagas < ActiveRecord::Migration
       t.integer :numero
       t.text :descricao
       t.references :empresa, index: true
+      t.references :curso, index: true
 
       t.timestamps
     end

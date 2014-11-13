@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141113202357) do
+ActiveRecord::Schema.define(version: 20141113203126) do
 
   create_table "alunos", force: true do |t|
     t.string   "matricula",  limit: 9
@@ -54,10 +54,12 @@ ActiveRecord::Schema.define(version: 20141113202357) do
     t.integer  "numero"
     t.text     "descricao"
     t.integer  "empresa_id"
+    t.integer  "curso_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "vagas", ["curso_id"], name: "index_vagas_on_curso_id"
   add_index "vagas", ["empresa_id"], name: "index_vagas_on_empresa_id"
 
 end

@@ -4,8 +4,10 @@ one:
   numero: 1
   descricao: MyText
   empresa_id: 
+  curso_id: 
 
 two:
   numero: 1
   descricao: MyText
   empresa_id: 
+  curso_id: 
