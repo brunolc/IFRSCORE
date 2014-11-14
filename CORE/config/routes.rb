@@ -16,6 +16,15 @@ CORE::Application.routes.draw do
   resources :vagas
 
 
+
+   match 'alunos/deletar/:id', controller: 'alunos', action: 'destroy', via: 'get'
+
+   match 'vagas/deletar/:id', controller: 'vagas', action: 'destroy', via: 'get'
+
+
+   match 'empresas/deletar/:id', controller: 'empresas', action: 'destroy', via: 'get'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

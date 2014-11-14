@@ -11,9 +11,10 @@
 
     <%= link_to v.descricao, vaga_path(v) %>
 
-    <%= link_to "Excluir", v, method: :delete %>
 
     <%= link_to "Editar", edit_vaga_path(v) %>
+
+     <a href="vagas/deletar/<%=v.id %>">Excluir </a>
 
     <br><br>
 

@@ -22,9 +22,11 @@
 
     <%= link_to a.nome, aluno_path(a) %>
 
-    <%= link_to "Excluir", a, method: :delete %>
+   
 
     <%= link_to "Editar", edit_aluno_path(a) %>
+
+     <a href="alunos/deletar/<%=a.id %>">Excluir </a>
 
     <br><br>
 

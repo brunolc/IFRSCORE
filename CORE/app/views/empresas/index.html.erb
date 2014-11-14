@@ -19,9 +19,11 @@
 
     <%= link_to e.nome, empresa_path(e) %>
 
-    <%= link_to "Excluir", e, method: :delete %>
+ 
 
     <%= link_to "Editar", edit_empresa_path(e) %>
+
+     <a href="empresas/deletar/<%=e.id %>">Excluir </a>
 
     <br><br>
 
