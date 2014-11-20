@@ -3,6 +3,7 @@ class CreateVagas < ActiveRecord::Migration
     create_table :vagas do |t|
       t.integer :numero
       t.text :descricao
+      t.boolean :aberta
       t.references :empresa, index: true
       t.references :curso, index: true
 

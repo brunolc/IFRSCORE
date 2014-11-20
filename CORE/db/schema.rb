@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 20141113204103) do
   create_table "vagas", force: true do |t|
     t.integer  "numero"
     t.text     "descricao"
+    t.boolean  "aberta"
     t.integer  "empresa_id"
     t.integer  "curso_id"
     t.datetime "created_at"
