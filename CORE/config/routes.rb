@@ -1,8 +1,9 @@
 CORE::Application.routes.draw do
 
+  get "inscricao/cadastra"
   get "login_empresa"=> 'login_empresa#index', as: :loginempresa_form
   post 'login_empresa/login2',as: :login2
-    get 'logout2'=> 'login_empresa#logout2', as: :logout2
+  get 'logout2'=> 'login_empresa#logout2', as: :logout2
 
   
   get 'login' => 'login_aluno#index', as: :login_form
@@ -15,7 +16,10 @@ CORE::Application.routes.draw do
 
   resources :vagas
 
+  resources :inscricao
 
+
+    match 'vagas/:id/inscricao', controller: 'inscricao', action: 'cadastra', via: 'get'
 
    match 'alunos/deletar/:id', controller: 'alunos', action: 'destroy', via: 'get'
 

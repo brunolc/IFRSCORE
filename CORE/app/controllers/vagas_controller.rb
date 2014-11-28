@@ -13,6 +13,7 @@ class VagasController < ApplicationController
     def create
         @vaga = Vaga.new(params.require(:vaga).permit(:descricao,:numero))
         @vaga.empresa=Empresa.find_by_id(session[:empresa_id])
+        @vaga.aberta = true;
         if @vaga.save
             redirect_to :vagas, notice: "Vaga salva"
         else

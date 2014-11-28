@@ -1,6 +1,13 @@
   <br><br>
     <br><br>
       <br><br>
+<% if session[:usuario] %>
+
+    Logado como <%= session[:usuario] %>
+    <br>
+<a class="btn btn-danger" href="/logout">logout</a>
+<% end %>
+
 
 <h2>Empresa: <%= @empresa.nome %> </h2>
 <br>
@@ -11,3 +18,5 @@
 <br>
 <h2>Número de Vagas: <%= @vaga.numero %> </h2>
 <br>
+
+<a href="/vagas/<%=@vaga.id %>/inscricao">Inscrever-se </a>

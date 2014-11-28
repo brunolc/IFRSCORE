@@ -3,7 +3,9 @@
 one:
   vaga_id: 
   aluno_id: 
+  aberta: false
 
 two:
   vaga_id: 
   aluno_id: 
+  aberta: false
