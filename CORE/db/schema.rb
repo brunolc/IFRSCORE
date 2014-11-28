@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141113204103) do
+ActiveRecord::Schema.define(version: 20141127071122) do
 
   create_table "admins", force: true do |t|
     t.string   "email",      limit: 30
@@ -51,15 +51,16 @@ ActiveRecord::Schema.define(version: 20141113204103) do
     t.datetime "updated_at"
   end
 
-  create_table "inscricaos", force: true do |t|
+  create_table "inscricoes", force: true do |t|
     t.integer  "vaga_id"
     t.integer  "aluno_id"
+    t.boolean  "aberta"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "inscricaos", ["aluno_id"], name: "index_inscricaos_on_aluno_id"
-  add_index "inscricaos", ["vaga_id"], name: "index_inscricaos_on_vaga_id"
+  add_index "inscricoes", ["aluno_id"], name: "index_inscricoes_on_aluno_id"
+  add_index "inscricoes", ["vaga_id"], name: "index_inscricoes_on_vaga_id"
 
   create_table "vagas", force: true do |t|
     t.integer  "numero"
