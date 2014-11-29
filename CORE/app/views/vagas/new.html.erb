@@ -14,6 +14,18 @@
       <br>
 
 
+  <%= v.label 'Curso' %>
+      <select id="curso" name="curso">
+
+      <% @cursos.each do |b| %>
+            
+        <%= options_for_select([b.nome]) %>
+
+      <% end %>
+      </select>
+
+     <br>
+
     <%= v.label 'Vagas' %>
 
     <%= v.number_field :numero, min: 1 %>  
