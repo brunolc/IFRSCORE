@@ -15,6 +15,8 @@ class EmpresasController < ApplicationController
     def create
         @empresa = Empresa.new(params.require(:empresa).permit(:nome,:cnpj,:endereco,:cidade,:area_atuacao,:senha))
         @empresa.senha=Digest::MD5.hexdigest(@empresa.senha)
+        @empresa.valido = false
+        @empresa.senha_ativacao = SecureRandom.uuid
         if @empresa.save
             redirect_to :empresas, notice: "Empresa #{@empresa.nome} salvo"
         else
