@@ -19,7 +19,7 @@ class AlunosController < ApplicationController
         @aluno.senha_ativacao = SecureRandom.uuid
         if @aluno.save
             @curriculo = Curriculo.new
-            @curriculo.aluno = @aluno
+            @curriculo.aluno = Aluno.find(@aluno)
             @curriculo.save
             redirect_to :alunos, notice: "Aluno #{@aluno.nome} salvo"
         else
