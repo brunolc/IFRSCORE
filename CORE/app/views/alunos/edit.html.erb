@@ -13,6 +13,18 @@
     <%= a.text_field :matricula, maxlength: 9 %>
       <br>
 
+       
+      <%= a.label 'Curso' %>
+      <select id="curso" name="curso">
+
+      <% @cursos.each do |b| %>
+            
+        <%= options_for_select([b.nome]) %>
+
+      <% end %>
+      </select>
+
+     <br>
 
     <%= a.label 'Nome' %>
 
