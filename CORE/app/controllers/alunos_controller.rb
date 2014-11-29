@@ -13,7 +13,9 @@ class AlunosController < ApplicationController
 
     def create
         @aluno = Aluno.new(params.require(:aluno).permit(:matricula,:nome,:email,:senha))
-         @aluno.senha = Digest::MD5.hexdigest(@aluno.senha)  
+        @aluno.senha = Digest::MD5.hexdigest(@aluno.senha)  
+        @aluno.ativo = false  
+        @aluno.senha_ativacao = SecureRandom.uuid
         if @aluno.save
             redirect_to :alunos, notice: "Aluno #{@aluno.nome} salvo"
         else
