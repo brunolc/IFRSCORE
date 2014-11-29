@@ -8,7 +8,7 @@ class InscricaoController < ApplicationController
 	def cadastra
 		if session[:usuario_id].nil?
 			flash[:alert] = 'Voce deve estar logado como usuario para fazer isso'
-        	redirect_to 'root'
+        	redirect_to '/vagas'
     	else
     		@inscricao = Inscricao.new
     		@inscricao.aluno = Aluno.find_by_id(session[:usuario_id])
@@ -16,7 +16,7 @@ class InscricaoController < ApplicationController
         	if @inscricao.save
         		InscricaoAlunoMailer.realizada(@inscricao).deliver
         		InscricaoEmpresaMailer.realizada(@inscricao).deliver
-            	redirect_to 'root', notice: "Inscricao realizada"
+            	redirect_to '/vagas', notice: "Inscricao realizada"
         	else
             	#
         	end
