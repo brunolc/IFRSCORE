@@ -24,7 +24,7 @@ class AlunosController < ApplicationController
         if @aluno.save
             @curriculo = Curriculo.new
             @curriculo.aluno = Aluno.find(@aluno)
-            @curriculo.save
+            @curriculo.save(:validate => false)
             redirect_to :alunos, notice: "Aluno #{@aluno.nome} salvo"
         else
             render :new
