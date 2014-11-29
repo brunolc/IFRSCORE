@@ -3,7 +3,8 @@ class AlunosController < ApplicationController
     def index
         @alunos = Aluno.all
     end
-  def new
+
+    def new
         @aluno = Aluno.new
     end
 
@@ -17,6 +18,9 @@ class AlunosController < ApplicationController
         @aluno.ativo = false  
         @aluno.senha_ativacao = SecureRandom.uuid
         if @aluno.save
+            @curriculo = Curriculo.new
+            @curriculo.aluno = @aluno
+            @curriculo.save
             redirect_to :alunos, notice: "Aluno #{@aluno.nome} salvo"
         else
             render :new
@@ -43,6 +47,19 @@ class AlunosController < ApplicationController
     def show
         @aluno = Aluno.find(params[:id])
     end
+
+    def editar_curriculo
+        if session[:usuario_id].nil?
+            redirect_to '/erro_sessao'
+        else
+            @curriculo = Curriculo.find_by_aluno_id(session[:usuario_id])
+        end
+    end
+
+    def edit_curriculo
+
+    end
+        
 
    
 
