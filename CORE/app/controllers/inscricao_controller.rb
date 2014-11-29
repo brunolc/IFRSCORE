@@ -15,7 +15,7 @@ class InscricaoController < ApplicationController
        		@inscricao.vaga = Vaga.find_by_id(params[:id])
         	if @inscricao.save
         		InscricaoAlunoMailer.realizada(@inscricao).deliver
-        		InscricaoEmpresaMailer.realizada(@inscricao).delivar
+        		InscricaoEmpresaMailer.realizada(@inscricao).deliver
             	redirect_to 'root', notice: "Inscricao realizada"
         	else
             	#
