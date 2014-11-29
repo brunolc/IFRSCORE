@@ -12,3 +12,11 @@ Aluno.create nome:'aluno', matricula:'11030116' ,email:'francisco@gmail.com' ,se
 
 Senha = Digest::MD5.hexdigest('admin')
 Empresa.create nome:'google', cnpj:'11030116' ,endereco:'rua 13 bairro 2324' ,cidade:'rio grande',email:'google@gmail.com',area_atuacao:'manja das buscas',senha:Senha
+
+
+Curso.create nome:'Informática para Internet'
+Curso.create nome:'Geoprocessamento'
+Curso.create nome:'Eletrotécnica'
+Curso.create nome:'Automação Industrial'
+Curso.create nome:'Fabricação Mecânica'
+Curso.create nome:'Refrigeração e Climatização'
