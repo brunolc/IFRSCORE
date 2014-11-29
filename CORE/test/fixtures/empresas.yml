@@ -5,17 +5,17 @@ one:
   cnpj: MyString
   endereco: MyString
   cidade: MyString
-  senha: MyString
+  email: MyString
   area_atuacao: MyText
-  validacao: false
-  hash: MyString
+  senha: MyString
+  valida: MyString
 
 two:
   nome: MyString
   cnpj: MyString
   endereco: MyString
   cidade: MyString
-  senha: MyString
+  email: MyString
   area_atuacao: MyText
-  validacao: false
-  hash: MyString
+  senha: MyString
+  valida: MyString
