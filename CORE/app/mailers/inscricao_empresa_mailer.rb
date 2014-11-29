@@ -8,14 +8,8 @@ class InscricaoEmpresaMailer < ActionMailer::Base
   #
   def realizada(i)
     @inscricao = i
-    puts ">>>>>"
-    puts @inscricao.vaga
     @vaga = Vaga.find_by_id(@inscricao.vaga)
-    p @vaga
     @empresa = Empresa.find_by_id(@vaga.empresa)
-    p @empresa
     mail to: @empresa.email, subject: "(IFRSCORE) Inscricao realizada"
-
-
   end
 end
