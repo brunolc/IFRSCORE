@@ -25,7 +25,8 @@ class AlunosController < ApplicationController
 
     def update
         @aluno = Aluno.find(params[:id])
-        if @aluno.update(params.require(:aluno).permit(:matricula,:nome,:email,:senha))
+        @aluno.senha = Digest::MD5.hexdigest(params[:aluno][:senha])  
+        if @aluno.update(params.require(:aluno).permit(:matricula,:nome,:email))
             redirect_to :alunos, notice: "Aluno #{@aluno.nome} atualizado"
         else
             render :edit

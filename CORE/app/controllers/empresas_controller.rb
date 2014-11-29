@@ -26,7 +26,8 @@ class EmpresasController < ApplicationController
 
     def update
         @empresa = Empresa.find(params[:id])
-        if @empresa.update(params.require(:empresa).permit(:nome,:cnpj,:email,:endereco,:cidade,:area_atuacao,:senha))
+        @empresa.senha = Digest::MD5.hexdigest(params[:empresa][:senha])  
+        if @empresa.update(params.require(:empresa).permit(:nome,:cnpj,:email,:endereco,:cidade,:area_atuacao))
             redirect_to :empresas, notice: "Empresa #{@empresa.nome} atualizado"
         else
             render :edit

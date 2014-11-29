@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141129035554) do
+ActiveRecord::Schema.define(version: 20141129145825) do
 
   create_table "admins", force: true do |t|
     t.string   "email",      limit: 30
@@ -22,12 +22,13 @@ ActiveRecord::Schema.define(version: 20141129035554) do
   end
 
   create_table "alunos", force: true do |t|
-    t.string   "matricula",  limit: 9
-    t.string   "nome",       limit: 30
-    t.string   "curriculo",  limit: 36
-    t.string   "email",      limit: 30
-    t.string   "senha",      limit: 32
+    t.string   "matricula",      limit: 8
+    t.string   "nome",           limit: 50
+    t.string   "email"
+    t.string   "senha",          limit: 32
     t.integer  "curso_id"
+    t.boolean  "ativo"
+    t.string   "senha_ativacao", limit: 36
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -84,9 +85,12 @@ ActiveRecord::Schema.define(version: 20141129035554) do
     t.date     "experiencia_inicio_5"
     t.date     "experiencia_fim_5"
     t.text     "cursos"
+    t.integer  "aluno_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "curriculos", ["aluno_id"], name: "index_curriculos_on_aluno_id"
 
   create_table "cursos", force: true do |t|
     t.string   "nome",       limit: 30
@@ -95,22 +99,22 @@ ActiveRecord::Schema.define(version: 20141129035554) do
   end
 
   create_table "empresas", force: true do |t|
-    t.string   "nome",         limit: 30
-    t.string   "cnpj",         limit: 40
-    t.string   "endereco",     limit: 50
-    t.string   "cidade",       limit: 50
-    t.string   "email",        limit: 50
+    t.string   "nome",           limit: 50
+    t.string   "cnpj",           limit: 40
+    t.string   "endereco",       limit: 50
+    t.string   "cidade",         limit: 50
+    t.string   "senha",          limit: 32
     t.text     "area_atuacao"
-    t.string   "senha",        limit: 32
-    t.string   "valida",       limit: 32
+    t.boolean  "valido"
+    t.string   "senha_ativacao", limit: 36
+    t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "inscricoes", force: true do |t|
-    t.integer  "vaga_id"
     t.integer  "aluno_id"
-    t.boolean  "aberta"
+    t.integer  "vaga_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
