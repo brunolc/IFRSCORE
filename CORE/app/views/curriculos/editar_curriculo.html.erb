@@ -1,0 +1,161 @@
+  <br><br>
+    <br><br>
+      <br><br>
+<h2>CURRÍCULO PADRÃO</h2>
+<br><br>
+<%#{:action => "edit_curriculo"}%>
+<table><tr>
+	<th><br><img src="/IFLOGO.png" alt="Logo 1"><br>
+		 <img src="/IFLOGO2.png" alt="Logo 2"></th>
+	<th><br><br>INSTITUTO FEDERAL DE EDUCAÇÃO, CIÊNCIA E TECNOLOGIA.</th>
+	<th>FOTO<br><br>3 X 4</th>
+</tr></table>
+<%= form_for @curriculo, :method => 'post', :url => '/perfil/curriculo/editar', :action => 'edit_curriculo', :controller => 'curriculos' do |c| %>
+<br><b>DADOS PESSOAIS:	</b><br>
+
+	<table>
+	<tr>
+		<td><%= c.label 'Nome' %>
+	    <%= c.text_field :nome %></td>
+	    <td><%= c.label 'Data de Nascimento' %>
+	    <%= c.date_field :nascimento %></td>
+	    <td><%= c.label 'Estado Civil' %>
+	    <%= c.text_field :estado_civil %></td>
+	</tr>
+	<tr>
+		<td><%= c.label 'Endereço' %>
+    	<%= c.text_field :endereco %></td>
+    	<td><%= c.label 'Bairro' %>
+    	<%= c.text_field :bairro %></td>
+    	<td><%= c.label 'Cidade' %>
+    	<%= c.text_field :cidade %></td>
+    	<td><%= c.label 'CEP' %>
+    	<%= c.text_field :cep %></td>
+    	<td><%= c.label 'UF' %>
+    	<%= c.text_field :uf, maxlength: 2 %></td>
+    </tr>
+    <tr>
+    	<td><%= c.label 'Telefone' %>
+    	<%= c.text_field :telefone %></td>
+    	<td><%= c.label 'Celular' %>
+    	<%= c.text_field :celular %></td>
+    </tr></table>
+	<br><b>DOCUMENTAÇÃO</b><br>
+	<table><tr>
+		<td><%= c.label 'RG' %>
+    	<%= c.text_field :rg, maxlength: 10 %></td>
+    	<td><%= c.label 'CPF' %>
+    	<%= c.text_field :cpf, maxlength: 11 %></td>
+    	<td><%= c.label 'CNH' %>
+    	<%= c.text_field :cnh %></td>
+	</tr></table>
+	<br><b>FORMAÇÃO</b><br>
+	<table><tr>
+		<td><%= c.label 'Técnica' %></td>
+		<td><%= c.label 'Curso' %>
+    	<%= c.text_field :formacao_tecnica_curso %></td>
+    	<td><%= c.label 'Período' %>
+    	<%= c.text_field :formacao_tecnica_periodo %></td>
+    </tr>
+    <tr>
+    	<td></td>
+    	<td><%= c.label 'Entidade' %>
+    	<%= c.text_field :formacao_tecnica_entidade %></td>
+    	<td><%= c.label 'Cidade' %>
+    	<%= c.text_field :formacao_tecnica_cidade %></td>
+    	<td><%= c.label 'UF' %>
+    	<%= c.text_field :formacao_tecnica_uf %></td>
+    </tr>
+    <tr>
+		<td><%= c.label 'Superior' %></td>
+		<td><%= c.label 'Curso' %>
+    	<%= c.text_field :formacao_superior_curso %></td>
+    	<td><%= c.label 'Período' %>
+    	<%= c.text_field :formacao_superior_periodo %></td>
+    </tr>
+    <tr>
+    	<td></td>
+    	<td><%= c.label 'Entidade' %>
+    	<%= c.text_field :formacao_superior_entidade %></td>
+    	<td><%= c.label 'Cidade' %>
+    	<%= c.text_field :formacao_superior_cidade %></td>
+    	<td><%= c.label 'UF' %>
+    	<%= c.text_field :formacao_superior_uf %></td>
+    </tr>
+    <tr>
+		<td><%= c.label 'Outros' %></td>
+		<td><%= c.label 'Curso' %>
+    	<%= c.text_field :formacao_outra_curso %></td>
+    	<td><%= c.label 'Período' %>
+    	<%= c.text_field :formacao_outra_periodo %></td>
+    </tr>
+    <tr>
+    	<td></td>
+    	<td><%= c.label 'Entidade' %>
+    	<%= c.text_field :formacao_outra_entidade %></td>
+    	<td><%= c.label 'Cidade' %>
+    	<%= c.text_field :formacao_outra_cidade %></td>
+    	<td><%= c.label 'UF' %>
+    	<%= c.text_field :formacao_outra_uf %></td>
+    </tr>
+</table>
+<br><b>EXPERIÊNCIA PROFISSIONAL:<b><br>
+<table>
+	<tr>
+		<th>Empresa</th>
+		<th>Função</th>
+		<th>Início</th>
+		<th>Fim</th>
+	</tr>
+	<tr>
+		<td><%= c.text_field :experiencia_empresa_1 %></td>
+		<td><%= c.text_field :experiencia_funcao_1 %></td>
+		<td><%= c.text_field :experiencia_inicio_1 %></td>
+		<td><%= c.text_field :experiencia_fim_1 %></td>
+	</tr>
+	<tr>
+		<td><%= c.text_field :experiencia_empresa_2 %></td>
+		<td><%= c.text_field :experiencia_funcao_2 %></td>
+		<td><%= c.text_field :experiencia_inicio_2 %></td>
+		<td><%= c.text_field :experiencia_fim_2 %></td>
+	</tr>
+	<tr>
+		<td><%= c.text_field :experiencia_empresa_3 %></td>
+		<td><%= c.text_field :experiencia_funcao_3 %></td>
+		<td><%= c.text_field :experiencia_inicio_3 %></td>
+		<td><%= c.text_field :experiencia_fim_3 %></td>
+	</tr>
+	<tr>
+		<td><%= c.text_field :experiencia_empresa_4 %></td>
+		<td><%= c.text_field :experiencia_funcao_4 %></td>
+		<td><%= c.text_field :experiencia_inicio_4 %></td>
+		<td><%= c.text_field :experiencia_fim_4 %></td>
+	</tr>
+	<tr>
+		<td><%= c.text_field :experiencia_empresa_5 %></td>
+		<td><%= c.text_field :experiencia_funcao_5 %></td>
+		<td><%= c.text_field :experiencia_inicio_5 %></td>
+		<td><%= c.text_field :experiencia_fim_5 %></td>
+	</tr>
+</table>
+<br><b>CURSOS:</b><br>
+<table>
+	<tr>
+		<td rowspan='5'><%= c.text_area :cursos %></td>
+	</tr>
+	<tr>
+		<td>Atesto, para os devidos fins, que as informações contidas neste curriculo são verdadeiras e passiveis de comprovação.</td>
+	</tr>
+</table>
+<br>
+<table>
+	<tr><td>Local:</td>
+		<td>Data:</td>
+		<td>Assinatura</td>
+	</tr>
+</table>
+<br><br>
+<table><tr><td></td><td></td><td><%= c.submit 'Salvar' %></td></tr>
+</table>
+
+<% end %>
