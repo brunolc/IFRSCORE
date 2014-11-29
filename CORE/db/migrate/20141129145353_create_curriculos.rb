@@ -50,6 +50,7 @@ class CreateCurriculos < ActiveRecord::Migration
       t.date :experiencia_inicio_5
       t.date :experiencia_fim_5
       t.text :cursos
+      t.references :aluno, index: true
 
       t.timestamps
     end
