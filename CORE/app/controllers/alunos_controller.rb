@@ -46,21 +46,6 @@ class AlunosController < ApplicationController
 
     def show
         @aluno = Aluno.find(params[:id])
-    end
-
-    def editar_curriculo
-        if session[:usuario_id].nil?
-            redirect_to '/erro_sessao'
-        else
-            @curriculo = Curriculo.find_by_aluno_id(session[:usuario_id])
-        end
-    end
-
-    def edit_curriculo
-
-    end
-        
-
-   
+    end  
 
 end
