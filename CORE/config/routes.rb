@@ -1,5 +1,8 @@
 CORE::Application.routes.draw do
 
+  get "login_admin/index"
+  get "login_admin/login3"
+  get "login_admin/logout3"
   #get "curriculos/editar_curriculo"
   #get "curriculos/edit_curriculo"
   get "login_empresa"=> 'login_empresa#index', as: :loginempresa_form

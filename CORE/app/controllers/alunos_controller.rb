@@ -51,7 +51,7 @@ class AlunosController < ApplicationController
 
     def show
         @aluno = Aluno.find(params[:id])
-         @curso=Curso.find(@aluno.curso)
+         @cursos=Curso.find(@aluno.curso)
     end  
 
 end
