@@ -11,13 +11,13 @@ class LoginEmpresaController < ApplicationController
     else
         session[:empresa] = u.nome
         session[:empresa_id] = u.id
-        redirect_to '/empresas'
+        redirect_to '/vagas'
     end
   end
   
     def logout2
      reset_session
-     redirect_to '/empresas'
+     redirect_to '/login_empresa'
   end
 
 end

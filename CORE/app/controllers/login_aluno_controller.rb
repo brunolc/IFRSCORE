@@ -11,14 +11,13 @@ class LoginAlunoController < ApplicationController
      else
         session[:usuario] = u.nome
         session[:usuario_id] = u.id
-        redirect_to '/alunos'    
+        redirect_to '/vagas'    
     end
   end  
 
   def logout
   	 reset_session
-     redirect_to '/alunos'
+     redirect_to '/login'
   end
-
 
 end

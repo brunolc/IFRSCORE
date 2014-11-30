@@ -1,2 +1,12 @@
-<h1>LoginAdmin#index</h1>
-<p>Find me in app/views/login_admin/index.html.erb</p>
+<br><br><br>
+
+<%= form_tag({action: 'login3'}, class: 'form-signin', method: 'post') do %>
+
+    <h2 class="form-signin-heading">Username</h2>
+    <input type="text" name="username"
+        class="form-control" placeholder="Seu username" required autofocus>
+    <input type="password"  name="senha"
+        class="form-control" placeholder="Sua senha" required>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+
+<% end %>
