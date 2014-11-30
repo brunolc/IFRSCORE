@@ -1,6 +1,19 @@
 // Place all the styles related to the login_aluno controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+    text-align: center;
+  background-color: #eee;
+}
+
+#vai{ 
+  position: absolute; 
+  left: 555px; 
+ 
+}
+
 .form-signin {
   max-width: 330px;
   padding: 15px;
