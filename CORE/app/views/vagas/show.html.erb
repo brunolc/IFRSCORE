@@ -22,4 +22,25 @@
 <h2>Número de Vagas: <%= @vaga.numero %> </h2>
 <br>
 
+<div id = 'alunosCadastrados'>
+
+	<h2>Alunos inscritos nessa vaga</h2>
+
+	<% if @alunos.empty? %>
+
+		Não há nenhum aluno inscrito nessa vaga
+
+	<% elsif%>
+
+		<% @alunos.each do |a| %>
+
+			Nome: <%= a.nome %> 
+			<a href="/curriculo/mostrar/<%= a.id %>.pdf"> Currículo</a><br>
+
+		<% end %>
+
+	<% end %>
+
+</div>
+
 <a href="/vagas/<%=@vaga.id %>/inscricao">Inscrever-se </a>

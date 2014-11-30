@@ -50,6 +50,11 @@ class VagasController < ApplicationController
         @vaga = Vaga.find(params[:id])
         @empresa = Empresa.find_by_id(@vaga.empresa)
         @cursos =Curso.find(@vaga.curso)
+        inscricoes = Inscricao.where(vaga_id: @vaga.id)
+        @alunos = Array.new
+        inscricoes.each do |i|
+            @alunos << Aluno.find(i.aluno)
+        end
     end
 
    
