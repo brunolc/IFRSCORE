@@ -27,6 +27,8 @@ CORE::Application.routes.draw do
 
    match 'perfil/curriculo', controller: 'curriculos', action: 'editar_curriculo', via: 'get'
 
+   match 'curriculo/mostrar/:id', controller: 'curriculos', action: 'mostrar', via: 'get'
+
    match 'perfil/curriculo/editar', controller: 'curriculos', action: 'edit_curriculo', via: 'post'   
 
    match 'vagas/:id/inscricao', controller: 'inscricao', action: 'cadastra', via: 'get'
@@ -36,6 +38,12 @@ CORE::Application.routes.draw do
    match 'vagas/deletar/:id', controller: 'vagas', action: 'destroy', via: 'get'
 
    match 'empresas/deletar/:id', controller: 'empresas', action: 'destroy', via: 'get'
+
+   get "login_admin"=> 'login_admin#index', as: :loginadmin_form
+
+   post 'login_admin/login3',as: :login3
+
+   get 'logout3'=> 'login_empresa#logout3', as: :logout3
 
 
   # The priority is based upon order of creation: first created -> highest priority.
