@@ -6,12 +6,12 @@ class LoginAdminController < ApplicationController
 
   	u = Admin.find_by_username_and_senha(params[:username], Digest::MD5.hexdigest(params[:senha]))
     if u.nil?
-        flash[:alert] = 'Nome ou senha invalidos'
+        flash[:alert] = 'Username ou senha invalidos'
         render 'index'
      else
         session[:admin] = u.username
         session[:admin_id] = u.id
-        redirect_to '/vagas'    
+        redirect_to '/alunos'    
   end
   
   end
