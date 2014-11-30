@@ -2,6 +2,7 @@ class VagasController < ApplicationController
     def index
         @vagas = Vaga.all
     end
+
   def new
         @vaga = Vaga.new
          @cursos =Curso.all
@@ -18,6 +19,10 @@ class VagasController < ApplicationController
         @vaga.aberta = true
         @vaga.curso=Curso.find_by_nome(params[:curso])
         if @vaga.save
+            @alunos = Aluno.where(ativo: true)
+            @alunos.each do |a|
+                InscricaoAlunoMailer.novaVaga(@vaga, a).deliver
+            end
             redirect_to :vagas, notice: "Vaga salva"
         else
             render :new
