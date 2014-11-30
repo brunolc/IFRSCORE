@@ -22,5 +22,26 @@ class CurriculosController < ApplicationController
     		end
     	end
     end
+
+    def mostrar
+        respond_to do |format|
+            format.html do
+                #redirect_to '/curriculo/mostrar/' + params[:id] + '.pdf'
+                @curriculo = Curriculo.find_by_aluno_id(params[:id])
+            end
+=begin      format.pdf do
+                if (@curriculo = Curriculo.find_by_aluno_id(params[:id]))
+                    string = "Currículo de " + @curriculo.nome
+                    puts ">>>>>>>>>>>>"
+                    puts @curriculo.nome
+                    puts @curriculo.nome.class
+                    render :pdf => "report", :layout => 'pdf.html.haml'
+                else
+                    redirect_to '/erro_404'
+                end
+            end
+=end
+        end
+    end
         
 end
