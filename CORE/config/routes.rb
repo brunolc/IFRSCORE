@@ -24,6 +24,9 @@ CORE::Application.routes.draw do
 
   resources :curriculo
 
+   match 'ativar/', controller: 'ativar', action: 'index', via: 'get'
+
+   match 'ativar/:id', controller: 'ativar', action: 'valida', via: 'get'
 
    match 'perfil/curriculo', controller: 'curriculos', action: 'editar_curriculo', via: 'get'
 
