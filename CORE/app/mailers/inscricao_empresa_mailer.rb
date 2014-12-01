@@ -1,3 +1,4 @@
+#Encoding UTF-8
 class InscricaoEmpresaMailer < ActionMailer::Base
   default from: "ifrscoretestes@gmail.com"
 
@@ -16,6 +17,6 @@ class InscricaoEmpresaMailer < ActionMailer::Base
   def cadastro(e)
     @empresa = e
     admin = Admin.find(1)
-    mail to: @admin.email, subject: "(IFRSCORE) Confirmação de cadastro de Empresa"
+    mail to: admin.email, subject: "(IFRSCORE) Confirmação de cadastro de Empresa"
   end
 end

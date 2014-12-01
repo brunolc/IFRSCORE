@@ -1,3 +1,4 @@
+#Encoding UTF-8
 class InscricaoAlunoMailer < ActionMailer::Base
   default from: "ifrscoretestes@gmail.com"
 
