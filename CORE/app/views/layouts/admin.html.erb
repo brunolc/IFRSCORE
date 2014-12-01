@@ -34,7 +34,6 @@
     <!-- Size should be 32 x 32 pixels -->
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
 
-    <%= javascript_include_tag "application" %>
   </head>
   <body>
 
@@ -49,9 +48,9 @@
           <a class="brand" href="#">CORE</a>
           <div class="container nav-collapse">
             <ul class="nav">
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
+              <li><h4>Olá <%=session[:admin]%></h4></li>
+              <li><%= link_to "Atualizar dados", "/empresas"  %></li>
+              <li><%= link_to "Sair", "/logout3"  %></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -65,13 +64,17 @@
             <%= yield %>
           </div>
           <div class="span3">
-            <div class="well sidebar-nav">
-              <h3>Sidebar</h3>
+            <div class="well sidebar-nav" id="sidebar-nav">
+              <h3>Opções</h3>
               <ul class="nav nav-list">
-                <li class="nav-header">Sidebar</li>
-                <li><%= link_to "Link1", "/path1"  %></li>
-                <li><%= link_to "Link2", "/path2"  %></li>
-                <li><%= link_to "Link3", "/path3"  %></li>
+                <li class="nav-header">Cadastro:</li>
+                <li><%= link_to "Cadastrar aluno",  new_aluno_path %></li>
+                <li><%= link_to "Cadastrar empresa",  new_empresa_path %></li>
+                <li class="nav-header">Visualizar:</li>
+                <li><%= link_to "Ver empresas", "/empresas"  %></li>
+                <li><%= link_to "Ver alunos", "/alunos"  %></li>
+                <li><%= link_to "Vagas", "/vagas"  %></li>
+
               </ul>
             </div><!--/.well -->
           </div><!--/span-->

@@ -2,6 +2,7 @@ require 'digest'
 class AlunosController < ApplicationController
     def index
         @alunos = Aluno.all
+        render layout: 'admin'
     end
    
     def new
