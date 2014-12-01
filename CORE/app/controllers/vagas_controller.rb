@@ -7,6 +7,8 @@ class VagasController < ApplicationController
         elsif params[:filtro].nil? or params[:filtro].to_i == 0
             @vagas = Vaga.all
         end
+        
+        render layout: 'empresa'
     end
 
   def new
