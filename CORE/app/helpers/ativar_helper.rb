@@ -1,0 +1,2 @@
+module AtivarHelper
+end
