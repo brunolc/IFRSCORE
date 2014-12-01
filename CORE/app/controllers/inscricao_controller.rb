@@ -17,8 +17,6 @@ class InscricaoController < ApplicationController
         		InscricaoAlunoMailer.realizada(@inscricao).deliver
         		InscricaoEmpresaMailer.realizada(@inscricao).deliver
             	redirect_to '/vagas', notice: "Inscricao realizada"
-        	else
-            	#
         	end
         end
 
