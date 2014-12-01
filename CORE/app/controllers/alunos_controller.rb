@@ -15,8 +15,9 @@ class AlunosController < ApplicationController
         if !session[:admin_id].nil?
             @alunos = Aluno.all
             render layout: 'admin'
-        end
+        else
             redirect_to 'erro_sessao' and return
+        end
     end
    
     def new
@@ -121,7 +122,7 @@ class AlunosController < ApplicationController
             a.destroy
             redirect_to :alunos, notice: "Aluno #{a.nome} excluido" and return
         else 
-            redirect_to 'erro_sessao' and return
+            redirect_to '/erro_sessao' and return
         end
     end
 
