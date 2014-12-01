@@ -7,6 +7,22 @@
     <%= content_tag :div, msg, class: name %>
 <% end %>
 
+<form>
+<b2>Filtrar vagas por curso</b2> 
+<select name = 'filtro' onchange="this.form.submit()">
+<option value='0' <%= 'selected' if @filtro == '0' %>>Sem filtro</option>
+<% @cursos.each do |c| %>
+<option value='<%= c.id %>'<%= 'selected' if @filtro.to_i == c.id %>> <%= c.nome %></option>
+
+<% end %>
+
+</select>
+</form>
+<% if @vagas.empty? %> 
+No momento não há vagas abertas para esse curso<br>
+<% end %>
+
+
 <% @vagas.each do |v| %>
 
     <%= link_to v.descricao, vaga_path(v) %>

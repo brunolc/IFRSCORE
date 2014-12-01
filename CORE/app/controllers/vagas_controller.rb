@@ -1,7 +1,12 @@
 class VagasController < ApplicationController
     def index
-        @vagas = Vaga.all
         @cursos =Curso.all
+        if params[:filtro].to_i != 0
+            @filtro = params[:filtro]
+            @vagas = Vaga.where(curso_id: @filtro.to_i)
+        elsif params[:filtro].nil? or params[:filtro].to_i == 0
+            @vagas = Vaga.all
+        end
     end
 
   def new
