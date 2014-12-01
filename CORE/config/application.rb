@@ -21,8 +21,8 @@ module CORE
     # config.i18n.default_locale = :de
   end
 
-   class Application < Rails::Application
-      config.middleware.use PDFKit::Middleware
-  end
+#   class Application < Rails::Application
+#      config.middleware.use PDFKit::Middleware
+#  end
 end
 

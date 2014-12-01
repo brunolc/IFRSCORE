@@ -1,11 +1,12 @@
 class VagasController < ApplicationController
     def index
         @vagas = Vaga.all
+        @cursos =Curso.all
     end
 
   def new
         @vaga = Vaga.new
-         @cursos =Curso.all
+        @cursos =Curso.all
     end
 
     def edit
