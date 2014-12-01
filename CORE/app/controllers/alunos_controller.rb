@@ -85,7 +85,7 @@ class AlunosController < ApplicationController
             @curriculo = Curriculo.new
             @curriculo.aluno = Aluno.find(@aluno)
             @curriculo.save(:validate => false)
-            redirect_to :alunos, notice: "Aluno #{@aluno.nome} salvo" and return
+            redirect_to :alunos, notice: "Cadastro realizado" and return
         else
             render :new
         end

@@ -17,7 +17,7 @@ class ErrosController < ApplicationController
 	    end
 	    if !session[:empresa_id].nil?
 	        flash[:alert] = 'Logado como: empresa ('+session[:empresa]+')'
-              render layout: 'empresa'
+            render layout: 'empresa'
 	    end
 
 	end
