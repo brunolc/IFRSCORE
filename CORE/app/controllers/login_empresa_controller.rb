@@ -6,10 +6,10 @@ class LoginEmpresaController < ApplicationController
         redirect_to '/logado' and return
     end
     if !session[:usuario_inativo_id].nil?
-        redirect_to '/ativacao' and return
+        redirect_to '/ativar' and return
     end
     if !session[:empresa_inativa_id].nil?
-        redirect_to '/ativacao' and return
+        redirect_to '/ativar' and return
     end
     if !session[:admin_id].nil?
         flash[:alert] = 'Logado como admin'
@@ -27,10 +27,10 @@ class LoginEmpresaController < ApplicationController
         redirect_to '/logado' and return
     end
     if !session[:usuario_inativo_id].nil?
-        redirect_to '/ativacao' and return
+        redirect_to '/ativar' and return
     end
     if !session[:empresa_inativa_id].nil?
-        redirect_to '/ativacao' and return
+        redirect_to '/ativar' and return
     end
     if !session[:admin_id].nil?
         flash[:alert] = 'Logado como admin'
@@ -45,14 +45,14 @@ class LoginEmpresaController < ApplicationController
         flash[:alert] = 'Nome ou senha invalidos'
         render 'index' and return
     else
-        if u.ativo == true
+        if u.valido == true
           session[:empresa] = u.nome
           session[:empresa_id] = u.id
           redirect_to '/vagas' and return
         else
           session[:empresa_inativa] = u.nome
           session[:empresa_inativa_id] = u.id
-          redirect_to '/ativacao' and return
+          redirect_to '/ativar' and return
         end
     end
   end

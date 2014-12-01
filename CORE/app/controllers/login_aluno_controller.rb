@@ -6,7 +6,7 @@ class LoginAlunoController < ApplicationController
         redirect_to '/logado' and return
     end
     if !session[:usuario_inativo_id].nil?
-        redirect_to '/ativacao' and return
+        redirect_to '/ativar' and return
     end
     if !session[:admin_id].nil?
         flash[:alert] = 'Logado como admin'
@@ -24,10 +24,10 @@ class LoginAlunoController < ApplicationController
         redirect_to '/logado' and return
     end
     if !session[:usuario_inativo_id].nil?
-        redirect_to '/ativacao' and return
+        redirect_to '/ativar' and return
     end
     if !session[:empresa_inativa_id].nil?
-        redirect_to '/ativacao' and return
+        redirect_to '/ativar' and return
     end
     if !session[:admin_id].nil?
         flash[:alert] = 'Logado como admin'
@@ -49,7 +49,7 @@ class LoginAlunoController < ApplicationController
         else
           session[:usuario_inativo] = u.nome
           session[:usuario_inativo_id] = u.id
-          redirect_to '/ativacao' and return
+          redirect_to '/ativar' and return
         end
     end
   end  
