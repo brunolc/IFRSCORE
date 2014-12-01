@@ -9,12 +9,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Senha1 = Digest::MD5.hexdigest('admin')
-Aluno.create nome:'aluno', matricula:'11030116' ,email:'francisco@gmail.com' ,senha:Senha1
 
-
-Senha = Digest::MD5.hexdigest('admin')
-Empresa.create nome:'google', cnpj:'11030116' ,endereco:'rua 13 bairro 2324' ,cidade:'rio grande',email:'google@gmail.com',area_atuacao:'manja das buscas',senha:Senha
 
 Senha2 = Digest::MD5.hexdigest('admin')
 Admin.create email:'imhyaku@gmail.com', username:'admin' ,senha:Senha2
