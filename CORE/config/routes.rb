@@ -47,7 +47,7 @@ CORE::Application.routes.draw do
 
    post 'login_admin/login3',as: :login3
 
-   get 'logout3'=> 'login_empresa#logout3', as: :logout3
+   get 'logout3'=> 'login_admin#logout3', as: :logout3
 
 
   # The priority is based upon order of creation: first created -> highest priority.
