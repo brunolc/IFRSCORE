@@ -27,7 +27,7 @@ class CurriculosController < ApplicationController
         if !session[:usuario_inativo_id].nil? or !session[:empresa_inativa_id].nil?
             redirect_to '/ativar' and return
         end
-        if !session[:empresa_id].nil? or !session[:admin_id].nil? or session[:usuario_id] == params[:id]
+        if !session[:empresa_id].nil? or !session[:admin_id].nil? or session[:usuario_id] == params[:id].to_i
             respond_to do |format|
                 format.html do
                     redirect_to '/curriculo/mostrar/' + params[:id] + '.pdf' and return

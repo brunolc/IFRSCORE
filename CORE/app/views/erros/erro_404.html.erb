@@ -1,0 +1,8 @@
+<h1>Erro: pagina nao encontrada</h1>
+<% if !session[:usuario_id].nil? or !session[:admin_id].nil? or !session[:empresa_id].nil? %>
+	<p>Clique <a href="/vagas">aqui</a> para voltar a pagina inicial.</p>
+<% else %>
+	<p>Aluno? Clique <a href="/login">aqui</a> para fazer login.</p>
+	<p>Empresa? Entao clique <a href="/login_empresa">aqui</a>!</p>
+	<p>Ainda nao e cadastrado??? Faca cadastro de <a href="/alunos/new">aluno</a> ou <a href="/empresas/new">empresa</a>.</p>
+<% end %>

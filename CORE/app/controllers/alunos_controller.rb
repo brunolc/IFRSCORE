@@ -36,8 +36,6 @@ class AlunosController < ApplicationController
             @cursos =Curso.all
             if !session[:admin_id].nil?
                 render layout: 'admin'
-            else
-                render layout: 'aluno'
             end
         end
     end

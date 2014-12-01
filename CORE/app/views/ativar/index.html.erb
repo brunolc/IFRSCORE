@@ -1,2 +1,19 @@
-<h1>Ativar#index</h1>
-<p>Find me in app/views/ativar/index.html.erb</p>
+<h1>Conta ainda nao foi ativada</h1>
+
+<% if !session[:usuario_inativo_id].nil? %>
+<p>
+	Um email com um link de ativacao foi enviado para o email cadastrado, por favor verifique sua caixa de entrada, spam e lixeira.
+</p>
+<br>
+<a class="btn btn-danger" href="/logout">logout</a>
+<% end %>
+
+<% if !session[:empresa_inativa_id].nil? %>
+
+<p>
+	Uma solicitacao foi enviada para o admin. Por favor, aguarde enquanto a mesma e processada.
+</p>
+<br>
+<a class="btn btn-danger" href="/logout2">logout</a>
+
+<% end %>

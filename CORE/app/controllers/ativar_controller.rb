@@ -1,6 +1,5 @@
 class AtivarController < ApplicationController
     def valida
-        #/ativar/id
         @usuario = Array.new
         @usuario << Empresa.find_by_senha_ativacao(params[:id])
         if !@usuario[0].nil?
@@ -41,6 +40,8 @@ class AtivarController < ApplicationController
     end
 
   def index
-
+    if !session[:usuario_inativo_id].nil? or !session[:empresa_inativa_id].nil?
+       redirect_to "/logado"  and return
+    end
   end
 end

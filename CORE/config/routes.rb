@@ -1,10 +1,11 @@
 CORE::Application.routes.draw do
 
+  get "logado" => 'erros#logado'
+  get "erro_sessao" => 'erros#erro_sessao'
+  get "erro_404" => 'erros#erro_404'
   get "login_admin/index"
   get "login_admin/login3"
   get "login_admin/logout3"
-  #get "curriculos/editar_curriculo"
-  #get "curriculos/edit_curriculo"
   get "login_empresa"=> 'login_empresa#index', as: :loginempresa_form
   post 'login_empresa/login2',as: :login2
   get 'logout2'=> 'login_empresa#logout2', as: :logout2
