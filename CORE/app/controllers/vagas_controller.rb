@@ -8,7 +8,8 @@ class VagasController < ApplicationController
             @vagas = Vaga.all
         end
         
-        render layout: 'empresa'
+        #render layout: 'empresa' #layout bugando o código, precisa estar dentro de um bloco if
+        # arrumar depois ^
     end
 
   def new

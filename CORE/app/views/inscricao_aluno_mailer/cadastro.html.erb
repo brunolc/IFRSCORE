@@ -1,0 +1,5 @@
+<h1>Olá, <%= @aluno.nome %></h1>
+
+<p>
+	É necessário que você confirme o seu e-mail antes de poder acessar o site da CORE. Você pode fazê-lo clicando <a href="127.0.0.1:3000/ativar/<%=@aluno.senha_ativacao%>">aqui</a> ou colando esse link no seu navegador: <a href="127.0.0.1:3000/ativar/<%=@aluno.senha_ativacao%>">127.0.0.1:3000/ativar/<%=@aluno.senha_ativacao%></a>
+</p>

@@ -18,6 +18,7 @@ class EmpresasController < ApplicationController
         @empresa.valido = false
         @empresa.senha_ativacao = SecureRandom.uuid
         if @empresa.save
+            InscricaoEmpresaMailer.cadastro(@empresa).deliver
             redirect_to :empresas, notice: "Empresa #{@empresa.nome} salvo"
         else
             render :new

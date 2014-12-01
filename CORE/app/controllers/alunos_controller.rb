@@ -23,6 +23,7 @@ class AlunosController < ApplicationController
         @aluno.senha_ativacao = SecureRandom.uuid
          @aluno.curso=Curso.find_by_nome(params[:curso])
         if @aluno.save
+            InscricaoAlunoMailer.cadastro(@aluno).deliver
             @curriculo = Curriculo.new
             @curriculo.aluno = Aluno.find(@aluno)
             @curriculo.save(:validate => false)
@@ -52,7 +53,6 @@ class AlunosController < ApplicationController
 
     def show
         @aluno = Aluno.find(params[:id])
-         @cursos=Curso.find(@aluno.curso)
+        @cursos=Curso.find(@aluno.curso)
     end  
-
 end
