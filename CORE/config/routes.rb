@@ -25,6 +25,8 @@ CORE::Application.routes.draw do
 
   resources :curriculo
 
+   match 'vaga/:id/fechar', controller: 'vagas', action: 'fechar', via: 'get'
+
    match 'ativar/', controller: 'ativar', action: 'index', via: 'get'
 
    match 'ativar/:id', controller: 'ativar', action: 'valida', via: 'get'

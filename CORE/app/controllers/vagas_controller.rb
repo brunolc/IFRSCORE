@@ -147,6 +147,33 @@ class VagasController < ApplicationController
         end
     end
 
+    def fechar
+        if !session[:usuario_inativo_id].nil? or !session[:empresa_inativa_id].nil?
+            redirect_to '/ativar' and return
+        end
+        if !session[:usuario_id].nil?
+            redirect_to '/erro_sessao' and return
+        end
+        if !session[:admin_id].nil?
+            redirect_to '/erro_sessao' and return
+        end
+        if session[:empresa_id].nil?
+            redirect_to '/erro_sessao' and return
+        end
+        vaga = Vaga.find(params[:id])
+        empresa = Empresa.find(vaga.empresa)
+        if empresa.id == session[:empresa_id]
+            vaga.aberta = false
+            if vaga.save
+                redirect_to :vagas, notice: "Vaga fechada a inscricoes"
+            else
+                redirect_to :vagas, notice: "Ocorreu um erro, a vaga nao pode ser fechada"
+            end
+        else
+            redirect_to '/erro_sessao' and return
+        end
+    end
+
    
 
 end
