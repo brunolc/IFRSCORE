@@ -17,7 +17,7 @@ Senha = Digest::MD5.hexdigest('admin')
 Empresa.create nome:'google', cnpj:'11030116' ,endereco:'rua 13 bairro 2324' ,cidade:'rio grande',email:'google@gmail.com',area_atuacao:'manja das buscas',senha:Senha
 
 Senha2 = Digest::MD5.hexdigest('admin')
-Admin.create email:'g@gmail.com', username:'admin' ,senha:Senha2
+Admin.create email:'imhyaku@gmail.com', username:'admin' ,senha:Senha2
 
 Curso.create nome:'Informática para Internet'
 Curso.create nome:'Geoprocessamento'
