@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Autenticacao" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "CORE" %></title>
     <%= csrf_meta_tags %>
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -34,15 +34,55 @@
     <!-- Size should be 32 x 32 pixels -->
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
 
-   
   </head>
   <body>
 
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">CORE</a>
+          <div class="container nav-collapse">
+            <ul class="nav">
+              <li><h4>Olá <%=session[:usuario]%></h4></li>
+              <li><a href="alunos/<%=session[:usuario_id]%>/edit">Atualizar meus dados </a></li>
+              <li><%= link_to "Sair", "/logout"  %></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
 
     <div class="container">
+        <div class="row">
+          <div class="span9">
+            <%= bootstrap_flash %>
+            <%= yield %>
+          </div>
+          <div class="span3">
+            <div class="well sidebar-nav" id="sidebar-nav">
+              <h3>Opções</h3>
+              <ul class="nav nav-list">
+                <li class="nav-header">Meus dados:</li>
+                <li><%= link_to "Criar Curriculo", "/perfil/curriculo"  %></li>
+                <li><%= link_to "Editar Curriculo", "/perfil/curriculo" %></li>
+                <li class="nav-header">Visualizar:</li>
+                <li><%= link_to "Vagas disponíveis", "/vagas"  %></li>
+                <li><%= link_to "Minhas inscrições", ""  %></li>
+                
 
-    <%= bootstrap_flash %>
-    <%= yield %>
+              </ul>
+            </div><!--/.well -->
+          </div><!--/span-->
+        </div><!--/row-->
+
+      <footer>
+        <p>&copy; Company 2014</p>
+      </footer>
 
     </div> <!-- /container -->
 
