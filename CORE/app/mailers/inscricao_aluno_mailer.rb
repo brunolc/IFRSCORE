@@ -18,11 +18,11 @@ class InscricaoAlunoMailer < ActionMailer::Base
     @aluno = a
     @empresa = Empresa.find(@vaga.empresa)
     @curso = Curso.find(@vaga.curso)
-    mail to: @aluno.email, subject: "(IFRSCORE) Uma empresa abriu uma nova vaga para estagiário"
+    mail to: @aluno.email, subject: "(IFRSCORE) Uma empresa abriu uma nova vaga para estagiario"
   end
 
   def cadastro(a)
     @aluno = a
-    mail to: @aluno.email, subject: "(IFRSCORE) É necessário confirmar seu email"
+    mail to: @aluno.email, subject: "(IFRSCORE) E necessario confirmar seu email"
   end
 end

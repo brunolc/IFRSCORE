@@ -11,12 +11,12 @@ class InscricaoEmpresaMailer < ActionMailer::Base
     @inscricao = i
     @vaga = Vaga.find_by_id(@inscricao.vaga)
     @empresa = Empresa.find_by_id(@vaga.empresa)
-    mail to: @empresa.email, subject: "(IFRSCORE) Inscrição realizada"
+    mail to: @empresa.email, subject: "(IFRSCORE) Inscricao realizada"
   end
 
   def cadastro(e)
     @empresa = e
     admin = Admin.find(1)
-    mail to: admin.email, subject: "(IFRSCORE) Confirmação de cadastro de Empresa"
+    mail to: admin.email, subject: "(IFRSCORE) Confirmacao de cadastro de Empresa"
   end
 end
