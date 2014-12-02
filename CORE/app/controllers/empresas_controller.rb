@@ -57,6 +57,7 @@ class EmpresasController < ApplicationController
                 render layout: 'admin'
             else
                 render layout: 'empresa'
+            end
         end
     end
 

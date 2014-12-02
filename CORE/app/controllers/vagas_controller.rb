@@ -12,7 +12,7 @@ class VagasController < ApplicationController
         end
         if !session[:usuario_id].nil? or !session[:empresa_id].nil? or !session[:admin_id].nil?
             if !session[:usuario_id].nil?
-                render layout: 'usuario'
+                render layout: 'aluno'
             elsif !session[:empresa_id].nil?
                 render layout: 'empresa'
             elsif !session[:admin_id].nil?
@@ -43,7 +43,7 @@ class VagasController < ApplicationController
             flash[:alert] = 'Logado como: aluno ('+session[:usuario]+')'
             redirect_to '/logado' and return
         end
-        if (!session[:empresa_id].nil? and session[:empresa_id] != params[:id].to_i) or ) or !session[:admin_id].nil?
+        if (!session[:empresa_id].nil? and session[:empresa_id] != params[:id].to_i) or !session[:admin_id].nil?
             redirect_to '/erro_sessao' and return
         elsif (!session[:empresa_id].nil? and session[:empresa_id] == params[:id].to_i)
             @vaga = Vaga.find(params[:id])

@@ -12,7 +12,7 @@
 
 
 Senha2 = Digest::MD5.hexdigest('admin')
-Admin.create email:'imhyaku@gmail.com', username:'admin' ,senha:Senha2
+Admin.create email:'ifrscoretestes@gmail.com', username:'admin' ,senha:Senha2
 
 Curso.create nome:'Informática para Internet'
 Curso.create nome:'Geoprocessamento'
